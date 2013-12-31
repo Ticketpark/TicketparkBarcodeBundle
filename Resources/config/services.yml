@@ -1,0 +1,19 @@
+parameters:
+    ticketpark.barcode.qr.class:      Ticketpark\BarcodeBundle\Generator\QrCodeGenerator
+    ticketpark.barcode.barcode.class: Ticketpark\BarcodeBundle\Generator\BarcodeGenerator
+    ticketpark.twig.barcode_extension.class: Ticketpark\BarcodeBundle\Twig\BarcodeExtension
+
+services:
+    ticketpark.barcode.qr:
+        class: %ticketpark.barcode.qr.class%
+        arguments: [@ticketpark.file.handler]
+
+    ticketpark.barcode.barcode:
+        class: %ticketpark.barcode.barcode.class%
+        arguments: [@ticketpark.file.handler]
+
+    ticketpark.twig.barcode_extension:
+        class: %ticketpark.twig.barcode_extension.class%
+        arguments: [@ticketpark.barcode.barcode, @ticketpark.barcode.qr]
+        tags:
+            - { name: twig.extension }
