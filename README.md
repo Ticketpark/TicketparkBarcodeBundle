@@ -59,7 +59,7 @@ There is also a Twig extension, examples:
 ```
 
 **Advanced Usage**:<br>
-You can send manipulate the generated barcode by sending additional parameters.
+You send manipulate the generated barcode with additional parameters.
 See the Generator files in the `Generator` directory for more information about available types and options.
 
 ``` php
@@ -69,7 +69,7 @@ $params = array(
     'type' => 'code39',
     'barcodeOptions' => array(
         'barHeight' => 80
-    )'
+    )
 );
 $pathToBarcodeImage = $barcodeGenerator->get('someString', $params);
 ```
