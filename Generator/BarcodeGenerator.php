@@ -67,8 +67,8 @@ class BarcodeGenerator implements GeneratorInterface
             'type' => 'code39',
             'barcodeOptions' => array(
                 'barHeight'      => 80,
-                'barThickWidth'  => 4,
-                'barThinWidth'   => 2,
+                'barThickWidth'  => 3,
+                'barThinWidth'   => 1,
                 'drawText'       => false,
                 'withQuietZones' => false
             )
